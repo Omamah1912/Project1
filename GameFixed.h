@@ -53,7 +53,7 @@ public:
         std::cout << "Loading world with scaling factor: " << WORLD_SCALE << std::endl;
 
         load.LoadWorldFromFile(
-            "assets/temp.txt",
+            "assets/simple_map.txt",
             tiles, tileCount,
             obstacles, obstacleCount,
             collectibles, collectibleCount,
