@@ -17,11 +17,11 @@ public:
     Duck() {
         setTex("assets/duck_brown.png");
         
-        // Scale the duck to make it smaller (adjust scale as needed)
-        setScale(0.5f);  // Make duck 50% of original size
+        // Scale the duck to make it easily visible
+        setScale(1.5f);  // Make duck larger than original to ensure visibility
         
-        // Position duck at bottom left, on the ground level
-        setPosition(64.f, groundLevel - 16.f);  // Slightly above ground, accounting for scaled duck height
+        // Position duck at the center of the initial screen for guaranteed visibility
+        setPosition(400.f, 300.f);  // Center of 800x600 screen
     }
 
 

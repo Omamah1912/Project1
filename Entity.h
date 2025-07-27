@@ -8,7 +8,7 @@ protected:
     sf::Texture texture;      
     sf::Sprite sprite;      
     sf::Vector2f position;    
-    float groundLevel = 1792.0f;  // Updated to match actual ground level (row 28 * 64 pixels)
+    float groundLevel = 550.0f;  // More reasonable ground level for 600px screen height
     float gravity = 1200.f;
 
 

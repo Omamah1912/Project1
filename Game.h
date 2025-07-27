@@ -32,9 +32,9 @@ public:
         std::cout << "=== Game Constructor Started ===" << std::endl;
         window.setFramerateLimit(60);
 
-        // Initialize camera
+        // Initialize camera to start at a reasonable position
         camera.setSize(800.f, 600.f);          
-        camera.setCenter(400.f, 300.f);          
+        camera.setCenter(400.f, 300.f);  // Start camera at center of screen
         window.setView(camera);
 
 
@@ -136,24 +136,26 @@ private:
 
         // Update camera to follow the duck
         sf::Vector2f duckPos = player.getPosition();
+        std::cout << "Duck position: (" << duckPos.x << ", " << duckPos.y << ")" << std::endl;
 
-        // Smooth camera following (
+        // Simple camera following - center on duck with some offset
+        sf::Vector2f targetCenter = sf::Vector2f(duckPos.x, duckPos.y - 100.f); // Offset duck slightly above center
+
+        // Smooth interpolation (adjust 3.0f for different smoothness)
         sf::Vector2f currentCenter = camera.getCenter();
-        sf::Vector2f targetCenter = sf::Vector2f(duckPos.x + 200.f, duckPos.y); // Offset duck slightly left of center
+        sf::Vector2f newCenter = currentCenter + (targetCenter - currentCenter) * 3.0f * dt;
 
-        // Smooth interpolation (adjust 5.0f for different smoothness)
-        sf::Vector2f newCenter = currentCenter + (targetCenter - currentCenter) * 5.0f * dt;
-
+        // More permissive camera bounds to ensure duck is always visible
         float cameraHalfWidth = 400.f;  
         float cameraHalfHeight = 300.f; 
 
+        // Allow camera to move more freely
+        float worldLeft = 100.f;          // Allow camera to go further left
+        float worldRight = 6000.f;        // Allow camera to go further right
+        float worldTop = 100.f;           // Allow camera to go higher
+        float worldBottom = 1000.f;       // Allow camera to go lower
 
-        float worldLeft = cameraHalfWidth;          // Don't go past left edge
-        float worldRight = 100 * 64 - cameraHalfWidth;  // 100 tiles * 64 pixels - half camera width
-        float worldTop = cameraHalfHeight;          // Don't go past top
-        float worldBottom = 20 * 64 - cameraHalfHeight; // 20 tiles * 64 pixels - half camera height
-
-        // Clamp camera position
+        // Clamp camera position with more permissive bounds
         if (newCenter.x < worldLeft) newCenter.x = worldLeft;
         if (newCenter.x > worldRight) newCenter.x = worldRight;
         if (newCenter.y < worldTop) newCenter.y = worldTop;
@@ -223,6 +225,7 @@ private:
         }
 
         // Always render the player
+        std::cout << "Rendering duck at: (" << player.getPosition().x << ", " << player.getPosition().y << ")" << std::endl;
         player.render(window);
 
         window.display();
