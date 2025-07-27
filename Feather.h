@@ -5,6 +5,7 @@ class Feather : public Collectible {
 public:
     Feather(float x, float y) {
         setTex("assets/feather.png");
+        setScale(0.4f);  // Make feather smaller and more proportional
         setPosition(x, y);
     }
 

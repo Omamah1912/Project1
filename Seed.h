@@ -5,6 +5,7 @@ class Seed : public Collectible {
 public:
     Seed(float x, float y) {
         setTex("assets/seed.png");
+        setScale(0.3f);  // Make seed smaller and more proportional
         setPosition(x, y);
     }
 

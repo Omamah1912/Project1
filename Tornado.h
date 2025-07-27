@@ -4,6 +4,7 @@ class Tornado: public Obstacle {
 public:
 	Tornado(float x, float y) {
 		setTex("assets/tornado.png");
+		setScale(0.3f);  // Make tornado smaller and more proportional
 		setPosition(x, y);
 	}
 
