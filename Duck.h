@@ -17,13 +17,14 @@ public:
     Duck() {
         setTex("assets/duck_brown.png");
         
-        // Make duck large and easily visible
-        setScale(2.0f);  // 2x original size
+        // Make duck appropriately sized
+        setScale(1.0f);  // Normal size
         
-        // Position duck at the CENTER of the screen - visible coordinates
-        setPosition(400.f, 200.f);  // Center X, high up on screen (Y=200 instead of 400)
+        // Position duck at START of scaled world
+        // The scaled world starts around X=0, ground around Y=600
+        setPosition(100.f, 500.f);  // Left side, on ground level
         
-        std::cout << "Duck created at position: (400, 200) with scale 2.0" << std::endl;
+        std::cout << "Duck created at position: (100, 500) - scaled world coordinates" << std::endl;
     }
 
 

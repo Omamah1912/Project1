@@ -8,8 +8,8 @@ protected:
     sf::Texture texture;      
     sf::Sprite sprite;      
     sf::Vector2f position;    
-    float groundLevel = 450.0f;  // High up on screen - for 600px screen height
-    float gravity = 800.f;  // Reduced gravity so duck doesn't fall too fast
+    float groundLevel = 500.0f;  // Ground level for scaled world coordinates
+    float gravity = 800.f;  // Reasonable gravity
 
 
 public:
