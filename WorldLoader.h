@@ -13,7 +13,7 @@ using namespace std;
 #include "Bear.h"
 #include "puddleee.h"
 #include "Tornado.h"
-#include "Rock.h"
+#include "rock.h"
 #include "Feather.h"
 #include "Juice.h"
 #include "Seed.h"

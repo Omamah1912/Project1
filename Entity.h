@@ -8,7 +8,7 @@ protected:
     sf::Texture texture;      
     sf::Sprite sprite;      
     sf::Vector2f position;    
-    float groundLevel = 500.0f;
+    float groundLevel = 1792.0f;  // Updated to match actual ground level (row 28 * 64 pixels)
     float gravity = 1200.f;
 
 
@@ -22,6 +22,14 @@ public:
             std::cerr << "Failed to load texture: " << path << "\n";
         }
         sprite.setTexture(texture);
+    }
+
+    virtual void setScale(float scaleX, float scaleY) {
+        sprite.setScale(scaleX, scaleY);
+    }
+    
+    virtual void setScale(float scale) {
+        sprite.setScale(scale, scale);
     }
 
     virtual void setPosition(float x, float y) {

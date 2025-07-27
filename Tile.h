@@ -6,10 +6,22 @@
 class Tile : public Entity {
 private:
     bool textureLoaded = false;
+    sf::RectangleShape background;  // Background shape to handle transparency
 
 public:
     Tile(const std::string& texturePath, float x, float y) {
         std::cout << "Creating tile with texture: " << texturePath << " at (" << x << "," << y << ")" << std::endl;
+
+        // Setup background for transparency handling
+        background.setSize(sf::Vector2f(64.f, 64.f));
+        background.setPosition(x, y);
+        
+        // Set background color based on tile type
+        if (texturePath.find("grass") != std::string::npos) {
+            background.setFillColor(sf::Color(135, 206, 235)); // Sky blue to match game background
+        } else {
+            background.setFillColor(sf::Color::Transparent); // No background for solid tiles
+        }
 
         if (!texture.loadFromFile(texturePath)) {
             std::cout << "ERROR: Failed to load tile texture: " << texturePath << std::endl;
@@ -48,6 +60,9 @@ public:
 
     void render(sf::RenderWindow& window) override {
         if (textureLoaded) {
+            // Draw background first (for transparency handling)
+            window.draw(background);
+            // Then draw the sprite on top
             window.draw(sprite);
         }
     }

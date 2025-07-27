@@ -15,10 +15,13 @@ private:
 
 public:
     Duck() {
-
-
         setTex("assets/duck_brown.png");
-        setPosition(100.f, 1000.0f);
+        
+        // Scale the duck to make it smaller (adjust scale as needed)
+        setScale(0.5f);  // Make duck 50% of original size
+        
+        // Position duck at bottom left, on the ground level
+        setPosition(64.f, groundLevel - 16.f);  // Slightly above ground, accounting for scaled duck height
     }
 
 

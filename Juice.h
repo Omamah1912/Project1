@@ -5,6 +5,7 @@ class Juice : public Collectible {
 public:
     Juice(float x, float y) {
         setTex("assets/juice.png");
+        setScale(0.4f);  // Make juice smaller and more proportional
         setPosition(x, y);
     }
 
