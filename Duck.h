@@ -17,11 +17,13 @@ public:
     Duck() {
         setTex("assets/duck_brown.png");
         
-        // Scale the duck to make it easily visible
-        setScale(1.5f);  // Make duck larger than original to ensure visibility
+        // Make duck large and easily visible
+        setScale(2.0f);  // 2x original size
         
-        // Position duck at the center of the initial screen for guaranteed visibility
-        setPosition(400.f, 300.f);  // Center of 800x600 screen
+        // Start at a safe, visible position
+        setPosition(400.f, 400.f);  // Near screen center, above ground
+        
+        std::cout << "Duck created at position: (400, 400) with scale 2.0" << std::endl;
     }
 
 

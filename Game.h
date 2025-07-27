@@ -32,17 +32,16 @@ public:
         std::cout << "=== Game Constructor Started ===" << std::endl;
         window.setFramerateLimit(60);
 
-        // Initialize camera to start at a reasonable position
+        // Initialize camera
         camera.setSize(800.f, 600.f);          
-        camera.setCenter(400.f, 300.f);  // Start camera at center of screen
+        camera.setCenter(400.f, 300.f);  // Start at screen center
         window.setView(camera);
 
-
+        // Initialize arrays
         for (int i = 0; i < 3000; i++) tiles[i] = nullptr;
         for (int i = 0; i < 50; i++) obstacles[i] = nullptr;
         for (int i = 0; i < 50; i++) collectibles[i] = nullptr;
         for (int i = 0; i < 10; i++) enemies[i] = nullptr;
-
 
         obstacleCount = 0;
         collectibleCount = 0;
@@ -134,32 +133,28 @@ private:
     void update(float dt) {
         player.update(dt);
 
-        // Update camera to follow the duck
+        // Get duck position for camera
         sf::Vector2f duckPos = player.getPosition();
         std::cout << "Duck position: (" << duckPos.x << ", " << duckPos.y << ")" << std::endl;
 
-        // Simple camera following - center on duck with some offset
-        sf::Vector2f targetCenter = sf::Vector2f(duckPos.x, duckPos.y - 100.f); // Offset duck slightly above center
+        // Simple camera following - center on duck with slight offset
+        sf::Vector2f targetCenter = sf::Vector2f(duckPos.x, duckPos.y - 50.f); // Duck slightly below center
 
-        // Smooth interpolation (adjust 3.0f for different smoothness)
+        // Smooth camera movement
         sf::Vector2f currentCenter = camera.getCenter();
-        sf::Vector2f newCenter = currentCenter + (targetCenter - currentCenter) * 3.0f * dt;
+        sf::Vector2f newCenter = currentCenter + (targetCenter - currentCenter) * 5.0f * dt;
 
-        // More permissive camera bounds to ensure duck is always visible
-        float cameraHalfWidth = 400.f;  
-        float cameraHalfHeight = 300.f; 
+        // Very permissive camera bounds
+        float minX = 200.f;
+        float maxX = 6000.f;
+        float minY = 100.f;
+        float maxY = 1000.f;
 
-        // Allow camera to move more freely
-        float worldLeft = 100.f;          // Allow camera to go further left
-        float worldRight = 6000.f;        // Allow camera to go further right
-        float worldTop = 100.f;           // Allow camera to go higher
-        float worldBottom = 1000.f;       // Allow camera to go lower
-
-        // Clamp camera position with more permissive bounds
-        if (newCenter.x < worldLeft) newCenter.x = worldLeft;
-        if (newCenter.x > worldRight) newCenter.x = worldRight;
-        if (newCenter.y < worldTop) newCenter.y = worldTop;
-        if (newCenter.y > worldBottom) newCenter.y = worldBottom;
+        // Clamp camera
+        if (newCenter.x < minX) newCenter.x = minX;
+        if (newCenter.x > maxX) newCenter.x = maxX;
+        if (newCenter.y < minY) newCenter.y = minY;
+        if (newCenter.y > maxY) newCenter.y = maxY;
 
         camera.setCenter(newCenter);
         window.setView(camera);
@@ -168,25 +163,22 @@ private:
     }
 
     void render() {
-        window.clear(sf::Color(135, 206, 235)); // Sky blue background instead of black
+        window.clear(sf::Color(135, 206, 235)); // Sky blue background
 
-        // Get camera bounds for culling (only render what's visible)
+        // Get camera bounds for culling
         sf::Vector2f cameraCenter = camera.getCenter();
-        float left = cameraCenter.x - 450.f;   // A bit more than half screen width for buffer
+        float left = cameraCenter.x - 450.f;
         float right = cameraCenter.x + 450.f;
-        float top = cameraCenter.y - 350.f;    // A bit more than half screen height for buffer
+        float top = cameraCenter.y - 350.f;
         float bottom = cameraCenter.y + 350.f;
 
-        // Render tiles with frustum culling
-        int tilesRendered = 0;
+        // Render tiles with culling
         for (int i = 0; i < tileCount && i < 3000; ++i) {
             if (tiles[i]) {
                 sf::Vector2f tilePos = tiles[i]->getPosition();
-                // Only render tiles that are visible on screen
                 if (tilePos.x >= left - 64 && tilePos.x <= right + 64 &&
                     tilePos.y >= top - 64 && tilePos.y <= bottom + 64) {
                     tiles[i]->render(window);
-                    tilesRendered++;
                 }
             }
         }
@@ -224,9 +216,16 @@ private:
             }
         }
 
-        // Always render the player
-        std::cout << "Rendering duck at: (" << player.getPosition().x << ", " << player.getPosition().y << ")" << std::endl;
+        // Always render the player (duck) - this is the most important part!
+        sf::Vector2f duckPos = player.getPosition();
+        std::cout << "Rendering duck at: (" << duckPos.x << ", " << duckPos.y << ")" << std::endl;
         player.render(window);
+
+        // Draw a debug circle at duck position to help visualize
+        sf::CircleShape debugCircle(20);
+        debugCircle.setFillColor(sf::Color::Red);
+        debugCircle.setPosition(duckPos.x - 10, duckPos.y - 10);
+        window.draw(debugCircle);
 
         window.display();
     }
@@ -237,12 +236,14 @@ private:
         for (int i = 0; i < obstacleCount; ++i) {
             if (obstacles[i] && duckBounds.intersects(obstacles[i]->getBounds())) {
                 // Handle obstacle collisions
+                std::cout << "Duck hit obstacle!" << std::endl;
             }
         }
 
         for (int i = 0; i < collectibleCount; ++i) {
             if (collectibles[i] && duckBounds.intersects(collectibles[i]->getBounds())) {
                 collectibles[i]->onCollect(player);
+                std::cout << "Duck collected item!" << std::endl;
                 delete collectibles[i];
                 collectibles[i] = nullptr;
             }
@@ -251,6 +252,7 @@ private:
         for (int i = 0; i < enemyCount; ++i) {
             if (enemies[i] && duckBounds.intersects(enemies[i]->getBounds())) {
                 // Handle enemy collisions
+                std::cout << "Duck hit enemy!" << std::endl;
             }
         }
     }
