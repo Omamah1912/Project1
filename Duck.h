@@ -20,10 +20,10 @@ public:
         // Make duck large and easily visible
         setScale(2.0f);  // 2x original size
         
-        // Start at a safe, visible position
-        setPosition(400.f, 400.f);  // Near screen center, above ground
+        // Position duck at the CENTER of the screen - visible coordinates
+        setPosition(400.f, 200.f);  // Center X, high up on screen (Y=200 instead of 400)
         
-        std::cout << "Duck created at position: (400, 400) with scale 2.0" << std::endl;
+        std::cout << "Duck created at position: (400, 200) with scale 2.0" << std::endl;
     }
 
 
