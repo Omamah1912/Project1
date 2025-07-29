@@ -22,7 +22,7 @@ const int MAX_TILES = 3000;
 const int MAX_OBSTACLES = 100;
 const int MAX_COLLECTIBLES = 100;
 const int MAX_ENEMIES = 50;
-const int TILE_SIZE = 64;
+const int TILE_SIZE = 32; // Reduced from 64 to 32 for better proportions
 
 class WorldLoader {
 public:
