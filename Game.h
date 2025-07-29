@@ -149,9 +149,9 @@ private:
 
 
         float worldLeft = cameraHalfWidth;          // Don't go past left edge
-        float worldRight = 100 * 64 - cameraHalfWidth;  // 100 tiles * 64 pixels - half camera width
+        float worldRight = 100 * 32 - cameraHalfWidth;  // 100 tiles * 32 pixels - half camera width
         float worldTop = cameraHalfHeight;          // Don't go past top
-        float worldBottom = 20 * 64 - cameraHalfHeight; // 20 tiles * 64 pixels - half camera height
+        float worldBottom = 20 * 32 - cameraHalfHeight; // 20 tiles * 32 pixels - half camera height
 
         // Clamp camera position
         if (newCenter.x < worldLeft) newCenter.x = worldLeft;
@@ -180,9 +180,9 @@ private:
         for (int i = 0; i < tileCount && i < 3000; ++i) {
             if (tiles[i]) {
                 sf::Vector2f tilePos = tiles[i]->getPosition();
-                // Only render tiles that are visible on screen
-                if (tilePos.x >= left - 64 && tilePos.x <= right + 64 &&
-                    tilePos.y >= top - 64 && tilePos.y <= bottom + 64) {
+                // Only render tiles that are visible on screen (adjusted for 32-pixel tiles)
+                if (tilePos.x >= left - 32 && tilePos.x <= right + 32 &&
+                    tilePos.y >= top - 32 && tilePos.y <= bottom + 32) {
                     tiles[i]->render(window);
                     tilesRendered++;
                 }
@@ -193,8 +193,8 @@ private:
         for (int i = 0; i < obstacleCount && i < 50; ++i) {
             if (obstacles[i]) {
                 sf::Vector2f pos = obstacles[i]->getPosition();
-                if (pos.x >= left - 64 && pos.x <= right + 64 &&
-                    pos.y >= top - 64 && pos.y <= bottom + 64) {
+                if (pos.x >= left - 32 && pos.x <= right + 32 &&
+                    pos.y >= top - 32 && pos.y <= bottom + 32) {
                     obstacles[i]->render(window);
                 }
             }
@@ -204,8 +204,8 @@ private:
         for (int i = 0; i < collectibleCount && i < 50; ++i) {
             if (collectibles[i]) {
                 sf::Vector2f pos = collectibles[i]->getPosition();
-                if (pos.x >= left - 64 && pos.x <= right + 64 &&
-                    pos.y >= top - 64 && pos.y <= bottom + 64) {
+                if (pos.x >= left - 32 && pos.x <= right + 32 &&
+                    pos.y >= top - 32 && pos.y <= bottom + 32) {
                     collectibles[i]->render(window);
                 }
             }
@@ -215,8 +215,8 @@ private:
         for (int i = 0; i < enemyCount && i < 10; ++i) {
             if (enemies[i]) {
                 sf::Vector2f pos = enemies[i]->getPosition();
-                if (pos.x >= left - 64 && pos.x <= right + 64 &&
-                    pos.y >= top - 64 && pos.y <= bottom + 64) {
+                if (pos.x >= left - 32 && pos.x <= right + 32 &&
+                    pos.y >= top - 32 && pos.y <= bottom + 32) {
                     enemies[i]->render(window);
                 }
             }

@@ -16,9 +16,11 @@ private:
 public:
     Duck() {
 
-
         setTex("assets/duck_brown.png");
-        setPosition(100.f, 1000.0f);
+        // Position duck at a reasonable starting position on the ground
+        // With 32-pixel tiles and the new scaling, adjust ground level
+        groundLevel = 576.0f; // 18 tiles * 32 pixels = 576 (near bottom of 20-tile high map)
+        setPosition(64.f, groundLevel - 20.0f); // Start slightly above ground to allow for gravity
     }
 
 
