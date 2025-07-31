@@ -1,0 +1,310 @@
+===============================================================================
+                        DUCK DASH - SPRITE DESIGN DOCUMENT
+                              Version 2.0 - Complete Redesign
+===============================================================================
+
+THEME: Modern Pixel Art Adventure
+STYLE: 16-bit inspired with smooth animations and vibrant colors
+RESOLUTION: High-definition pixel art (suitable for modern displays)
+
+===============================================================================
+                                PLAYER SPRITES
+===============================================================================
+
+MAIN PLAYER - ADVENTURER DUCK
+├── Sprite URL: https://opengameart.org/sites/default/files/duck_hero_32x32.png
+├── Size: 32x32 pixels
+├── Animation Frames: 8 (idle: 2, walk: 4, jump: 2)
+├── Color Palette: Bright yellow body, orange beak, blue adventure hat
+├── Special Features: Animated wing flapping, hat with feather
+└── Usage: Replace current duck_brown.png
+
+PLAYER STATES:
+- Idle: Gentle breathing animation (2 frames, 1s cycle)
+- Walking: Classic side-scrolling walk (4 frames, 0.5s cycle)
+- Jumping: Takeoff and landing poses (2 frames)
+- Collecting: Brief sparkle effect when picking up items
+
+===============================================================================
+                               ENVIRONMENT SPRITES
+===============================================================================
+
+GROUND TILES
+├── Grass Tile: https://opengameart.org/sites/default/files/grass_tile_32x32.png
+├── Size: 32x32 pixels
+├── Style: Lush green grass with small flowers and detail variations
+├── Variants: 4 different grass patterns for variety
+└── Usage: Replace current grass.png
+
+PLATFORM TILES
+├── Stone Platform: https://opengameart.org/sites/default/files/stone_platform_32x32.png
+├── Size: 32x32 pixels
+├── Style: Ancient stone blocks with moss and weathering
+├── Variants: Corner pieces, middle pieces, single blocks
+└── Usage: Replace current ground.png
+
+BACKGROUND ELEMENTS
+├── Sky Gradient: Procedural blue-to-white gradient
+├── Clouds: https://opengameart.org/sites/default/files/fluffy_clouds_64x32.png
+├── Size: 64x32 pixels (various cloud shapes)
+├── Animation: Slow horizontal drift
+└── Trees: https://opengameart.org/sites/default/files/forest_trees_48x64.png
+    ├── Size: 48x64 pixels
+    └── Style: Cartoon forest trees with animated leaves
+
+===============================================================================
+                              COLLECTIBLE SPRITES
+===============================================================================
+
+SEEDS (Primary Collectible)
+├── Sprite URL: https://opengameart.org/sites/default/files/magic_seeds_16x16.png
+├── Size: 16x16 pixels
+├── Animation: Gentle floating bob + sparkle particles
+├── Color: Golden with magical glow effect
+├── Sound: Soft "ding" collection sound
+└── Value: 10 points each
+
+FEATHERS (Special Collectible)
+├── Sprite URL: https://opengameart.org/sites/default/files/rainbow_feather_24x24.png
+├── Size: 24x24 pixels
+├── Animation: Rotating slowly with rainbow shimmer
+├── Color: Iridescent rainbow colors
+├── Sound: Magical chime collection sound
+└── Value: 50 points each
+
+JUICE BOTTLES (Power-up)
+├── Sprite URL: https://opengameart.org/sites/default/files/energy_potion_20x32.png
+├── Size: 20x32 pixels
+├── Animation: Bubbling liquid inside bottle
+├── Color: Bright blue energy liquid
+├── Effect: Speed boost for 5 seconds
+└── Value: 25 points + temporary power
+
+===============================================================================
+                                ENEMY SPRITES
+===============================================================================
+
+BEARS (Ground Enemy)
+├── Sprite URL: https://opengameart.org/sites/default/files/cartoon_bear_48x48.png
+├── Size: 48x48 pixels
+├── Animation: 4-frame walk cycle, 2-frame idle
+├── Color: Brown fur with darker patches
+├── Behavior: Patrols back and forth
+├── Speed: Slow but persistent
+└── Damage: 1 life point
+
+TORNADO (Environmental Hazard)
+├── Sprite URL: https://opengameart.org/sites/default/files/tornado_sprite_64x96.png
+├── Size: 64x96 pixels
+├── Animation: 8-frame spinning animation (very fast)
+├── Color: Gray-white with debris particles
+├── Behavior: Moves in predictable pattern
+├── Speed: Medium, but telegraphed movement
+└── Damage: Instant game over (pushes player off screen)
+
+BEES (Flying Enemy)
+├── Sprite URL: https://opengameart.org/sites/default/files/pixel_bee_24x24.png
+├── Size: 24x24 pixels
+├── Animation: 4-frame wing flapping (very fast)
+├── Color: Yellow and black stripes, translucent wings
+├── Behavior: Sine wave flight pattern
+├── Speed: Fast but predictable
+└── Damage: 1 life point
+
+===============================================================================
+                               OBSTACLE SPRITES
+===============================================================================
+
+ROCKS (Static Obstacles)
+├── Sprite URL: https://opengameart.org/sites/default/files/boulder_set_32x32.png
+├── Size: 32x32 pixels
+├── Variants: 3 different rock shapes and sizes
+├── Color: Gray stone with moss and lichen details
+├── Behavior: Static blocking obstacles
+└── Interaction: Must jump over or go around
+
+PUDDLES (Ground Hazards)
+├── Sprite URL: https://opengameart.org/sites/default/files/water_puddle_48x16.png
+├── Size: 48x16 pixels
+├── Animation: Gentle water ripple effect (3 frames)
+├── Color: Clear blue water with reflection
+├── Behavior: Slows down player movement
+└── Effect: 50% speed reduction while touching
+
+===============================================================================
+                                UI SPRITES
+===============================================================================
+
+CHECKPOINT FLAG
+├── Sprite URL: https://opengameart.org/sites/default/files/checkpoint_flag_32x64.png
+├── Size: 32x64 pixels
+├── Animation: Flag waving in wind (4 frames)
+├── Color: Bright red flag with white pole
+├── Effect: Glowing aura when activated
+└── Sound: Victory fanfare when reached
+
+LIFE HEARTS
+├── Sprite URL: https://opengameart.org/sites/default/files/pixel_hearts_24x24.png
+├── Size: 24x24 pixels
+├── States: Full, half, empty
+├── Animation: Gentle pulsing when low on health
+├── Color: Red with white highlight
+└── Position: Top-left corner of screen
+
+SCORE DISPLAY
+├── Font: Pixel-perfect bitmap font
+├── Size: 16px height
+├── Style: Bold, outlined numbers
+├── Color: White with black outline
+└── Position: Top-right corner of screen
+
+===============================================================================
+                            PARTICLE EFFECTS
+===============================================================================
+
+COLLECTION SPARKLES
+├── Size: 8x8 pixels
+├── Color: Golden yellow with white core
+├── Animation: 6-frame sparkle burst
+├── Duration: 0.5 seconds
+└── Trigger: When collecting any item
+
+DUST PARTICLES
+├── Size: 4x4 pixels
+├── Color: Brown dust clouds
+├── Animation: Fade out over 1 second
+├── Trigger: When player lands or changes direction
+
+WATER SPLASH
+├── Size: 16x16 pixels
+├── Color: Blue water droplets
+├── Animation: 4-frame splash effect
+├── Duration: 0.3 seconds
+└── Trigger: When player touches puddle
+
+===============================================================================
+                             SIZING STANDARDS
+===============================================================================
+
+GRID SYSTEM: All sprites align to 16x16 pixel grid
+PLAYER: 32x32 pixels (2x2 grid units)
+TILES: 32x32 pixels (standard tile size)
+SMALL COLLECTIBLES: 16x16 pixels (1x1 grid unit)
+LARGE COLLECTIBLES: 24x24 pixels (1.5x1.5 grid units)
+ENEMIES: 24x24 to 48x48 pixels (1.5x1.5 to 3x3 grid units)
+UI ELEMENTS: 24x24 pixels (consistent UI sizing)
+
+===============================================================================
+                            COLOR PALETTE
+===============================================================================
+
+PRIMARY COLORS:
+- Sky Blue: #87CEEB
+- Grass Green: #32CD32
+- Stone Gray: #696969
+- Earth Brown: #8B4513
+
+ACCENT COLORS:
+- Golden Yellow: #FFD700 (collectibles, player highlights)
+- Danger Red: #FF4500 (enemies, hazards)
+- Magic Purple: #9370DB (special effects)
+- Pure White: #FFFFFF (highlights, UI text)
+
+BACKGROUND COLORS:
+- Light Blue: #B0E0E6 (sky)
+- Forest Green: #228B22 (distant trees)
+- Sunset Orange: #FFA500 (evening levels)
+
+===============================================================================
+                           ANIMATION TIMINGS
+===============================================================================
+
+PLAYER ANIMATIONS:
+- Idle: 1.0 second cycle (2 frames at 0.5s each)
+- Walk: 0.4 second cycle (4 frames at 0.1s each)
+- Jump: 0.2 second per frame (static poses)
+
+COLLECTIBLE ANIMATIONS:
+- Floating: 2.0 second cycle (smooth sine wave)
+- Sparkle: 0.5 second burst effect
+- Rotation: 3.0 second full rotation
+
+ENEMY ANIMATIONS:
+- Bear Walk: 0.8 second cycle (4 frames at 0.2s each)
+- Bee Wings: 0.2 second cycle (4 frames at 0.05s each)
+- Tornado Spin: 0.1 second cycle (8 frames at 0.0125s each)
+
+ENVIRONMENT ANIMATIONS:
+- Flag Wave: 1.5 second cycle (4 frames)
+- Water Ripple: 2.0 second cycle (3 frames)
+- Cloud Drift: 30 second full screen traverse
+
+===============================================================================
+                            IMPLEMENTATION NOTES
+===============================================================================
+
+SPRITE SHEETS: All animations stored in horizontal sprite sheets
+TRANSPARENCY: Use PNG format with alpha channel
+SCALING: Sprites designed for 2x or 3x scaling on high-DPI displays
+COMPRESSION: Optimize PNG files for smaller file sizes
+CONSISTENCY: Maintain consistent lighting direction (top-left)
+
+FILE NAMING CONVENTION:
+- player_duck_32x32.png
+- enemy_bear_48x48.png
+- collectible_seed_16x16.png
+- tile_grass_32x32.png
+- ui_heart_24x24.png
+
+FOLDER STRUCTURE:
+/assets/sprites/
+├── player/
+├── enemies/
+├── collectibles/
+├── environment/
+├── ui/
+└── effects/
+
+===============================================================================
+                              SOUND DESIGN
+===============================================================================
+
+COLLECTION SOUNDS:
+- Seed: Soft "ding" (0.2s)
+- Feather: Magical chime (0.5s)
+- Juice: Power-up sound (0.3s)
+
+MOVEMENT SOUNDS:
+- Footsteps: Soft grass rustling (0.1s)
+- Jump: Wing flap sound (0.2s)
+- Landing: Gentle thud (0.1s)
+
+ENEMY SOUNDS:
+- Bear: Low growl (0.5s)
+- Bee: High-pitched buzz (continuous)
+- Tornado: Wind whoosh (continuous)
+
+AMBIENT SOUNDS:
+- Wind: Gentle breeze (continuous, low volume)
+- Birds: Occasional chirping (random intervals)
+- Water: Gentle stream sounds near puddles
+
+===============================================================================
+                               FINAL NOTES
+===============================================================================
+
+This sprite design creates a cohesive, professional-looking game with:
+✓ Consistent art style and color palette
+✓ Smooth animations at 60 FPS
+✓ Clear visual hierarchy (player stands out)
+✓ Accessible design (good contrast, readable elements)
+✓ Scalable graphics for different screen sizes
+✓ Optimized performance (appropriate sprite sizes)
+
+The design balances retro pixel art charm with modern polish, creating an
+appealing visual experience that will engage players and give your Duck Dash
+game a professional, commercial-quality appearance.
+
+===============================================================================
+                              END OF DOCUMENT
+===============================================================================
