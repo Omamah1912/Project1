@@ -7,6 +7,7 @@
 class Obstacle : public Entity {
 public:
     Obstacle() {}
+    virtual ~Obstacle() = default;
 
     void update(float dt) override {
         // If obstacles are static, nothing needed.

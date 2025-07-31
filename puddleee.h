@@ -4,7 +4,9 @@
 class Puddle : public Obstacle {
 public:
     Puddle(float x, float y) {
-        setTex("assets/puddle.png");
+        if (setTexture("assets/puddle.png")) {
+            scaleToSize(64.0f, 32.0f); // 64x32 pixels - wide and flat
+        }
         setPosition(x, y);
     }
 };

@@ -4,6 +4,7 @@
 class Enemy : public Entity {
 public:
     Enemy() {}
+    virtual ~Enemy() = default;
 
     virtual void onCollide() = 0;
 

@@ -1,9 +1,12 @@
 #pragma once
 #include "Entity.h"
 
+class Duck;
+ 
 class Collectible : public Entity {
 public:
     Collectible() {}
+    virtual ~Collectible() = default;
 
     virtual void onCollect(Duck& duck) = 0;
 

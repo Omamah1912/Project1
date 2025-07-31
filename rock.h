@@ -4,7 +4,9 @@
 class Rock : public Obstacle {
 public:
     Rock(float x, float y) {
-        setTex("assets/rock.png");
+        if (setTexture("assets/rock.png")) {
+            scaleToSize(48.0f, 48.0f); // 48x48 pixels
+        }
         setPosition(x, y);
     }
 };

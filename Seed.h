@@ -1,14 +1,18 @@
 #pragma once
 #include "Collectible.h"
+#include "Duck.h"
 
 class Seed : public Collectible {
 public:
     Seed(float x, float y) {
-        setTex("assets/seed.png");
+        if (setTexture("assets/seed.png")) {
+            scaleToSize(24.0f, 24.0f); // 24x24 pixels
+        }
         setPosition(x, y);
     }
 
     void onCollect(Duck& duck) override {
-        // Boost jump logic (to be implemented in Duck class)
+        std::cout << "Collected Seed! +5 points" << std::endl;
+        // Add scoring logic here later
     }
 };
