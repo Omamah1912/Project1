@@ -1,0 +1,21 @@
+LEGEND:
+P = Player (32x32 px, Kenney Platformer Characters)
+G = Ground/Grass (32x32 px, Kenney Platformer Tiles)
+E = Enemy (32x32 px, Kenney Enemy Characters)
+C = Collectible (Coin, 16x16 or 32x32 px, Kenney Platformer Coins)
+O = Obstacle (32x32 px, Kenney Platformer Obstacles)
+F = Checkpoint/Flag (32x32 px, Kenney Platformer Art Deluxe)
+B = Border/Background (32x32 px, Kenney Background Elements)
+(space) = Empty/air
+
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+B                                                                  B
+B      C         O         C         O         C         O         B
+B                                                                  B
+B   GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG   B
+B   G                                                        G   B
+B   G   P         E         F         E         C         G   G   B
+B   G                                                        G   B
+B   GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG   B
+B                                                                  B
+BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
