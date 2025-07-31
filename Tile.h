@@ -11,8 +11,6 @@ public:
     Tile(const std::string& texturePath, float x, float y) : texturePath(texturePath), isLoaded(false) {
         isLoaded = setTexture(texturePath);
         if (isLoaded) {
-            // Standard tile size: 64x64 pixels
-            scaleToSize(64.0f, 64.0f);
             setPosition(x, y);
         }
     }

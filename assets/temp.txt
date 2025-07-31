@@ -1,14 +1,20 @@
-F                                   J                               F                                                                               
-                                                                                                                                                            
-     S                                                              T                                                                                      
-        GGG                                              GGG                                    GGGGG                                                     
-             GG                    B                        GG        S            R                 GGG                                                
-                 GG                                            GG                                       GG                                              
-                   GGG                                           GGG                P                    GGG           B                               
-                      GG                                            GG                                     GG                                          
-                        GGGGG                                         GGGGG                                 GGGGG                                     
-                             GG                                             GG                                    GG                                  
-                               GGGG                                           GGGG                                  GGGG                              
-################################################################################################################################################
-################################################################################################################################################
-################################################################################################################################################
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+W   J          GGG            G       S         GGG     F     G         GGG           G     B       J    W
+W GGG      GGG     GGGG    GGGGGG   GGGGG   GGG     GGGGG   GGGG     GGG     GGGG  GGGGG    GGGGG   GGG   W
+W    GGGG       G        GGG        G        GG        G   G         GG   GG     GG   G   GG        G    W
+W  F   G     GGGGG   GGG    GG   GGGGGGG   GGG   GGGGG   GGGGG   GGGGG   GGG   GGG   GGG    GG   F   GGG  W
+W     GG   GGG    GG     GG   GG  G     GG   GGG      GG    GG  G     GG   GG  G     G   GGG    GG     GG W
+WGGG      GG     GGGGGGG   GGGGG  GGGGGGG    GGGGGGG   GGGGGGG  GGGGGGG    GGGGGGG  GGGGGGG   GGGGGGG   GGW
+W   S   G     GGG      GG       G       GG  G      GG       G  G      GG  G     GG        GG      GG    GW
+W   GGGGG  GGG   GGGGG   GGGGGGGG   GGGGG   GGGGGGGGG   GGGGG   GGGGGGG   GGGGGGGG   GGGGG   GGGGG  GGG  GW
+W      GG   G   GG   GG  G     GG  G     GG  G     GG  G     GG  G     GG  G     GG  G     GG  G    GG   GW
+W  T   GG  GGG  GG    GG  GGGGGGG   GGGGGGG  GGGGGGGG   GGGGGGG  GGGGGGG   GGGGGGG  GGGGGGG  GGG   GG  F GW
+W   GGG   GG    GG  B  GG   S    G       GG       GG   F    GG       GG       GG   S     GG  GG   GG     GW
+W  G    GG   GGGGGGG   GGGGGGG   GGGGGGGGG  GGGGGGGGG  GGGGGGGG  GGGGGGG  GGGGGGG   GGGGGGG   GGGGGGG   GGW
+W  J    GG   G     G    GG   GG  G     GG  G     GG   G     GG  G     GG  G     GG  G     GG  G     GG   GW
+W GGGGGGG   GGGGGGGG  GGGGG   GGGGGGG  GGGGGGG  GGGGGGG  GGGGG  GGGGGGG  GGGGGGG  GGGGGGG  GGGGGGGG  GGGGW
+W    GG    G       GG      GG      GG  G      GG      GG      GG      GG  G     GG      GG       GG     GW
+W   GG    GG   F   GG   GGGGGG   GGGGG GGGGG   GGGGG   GGGGG   GGGGGGG   GGGGGG   GGGGGG   G   F   GG   GGW
+W  GG   GGGGGGGGG   GG   G   GG  G   GG G   GG  G   GG  G   GG  G   GG  G   GG  G   GG   GG  GGGGGGGGG   GW
+WGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGCW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW

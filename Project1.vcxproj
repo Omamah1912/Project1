@@ -154,6 +154,7 @@
     <ClInclude Include="Feather.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Juice.h" />
+    <ClInclude Include="Key.h" />
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="puddleee.h" />
     <ClInclude Include="rock.h" />

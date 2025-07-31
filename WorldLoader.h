@@ -10,6 +10,8 @@
 #include "Feather.h"
 #include "Seed.h"
 #include "Juice.h"
+
+#include"Key.h"
 #include "rock.h"
 #include "puddleee.h"
 
@@ -52,19 +54,11 @@ public:
                 float y = static_cast<float>(row * TILE_SIZE);
 
                 switch (ch) {
-                case '#': // Ground tile
-                    if (tileCount < MAX_TILES) {
-                        tiles[tileCount] = new Tile("assets/grass.png", x, y);
-                        if (tiles[tileCount]->isValid()) {
-                            tileCount++;
-                        }
-                        else {
-                            delete tiles[tileCount];
-                        }
-                    }
+                case '#': 
+                 
                     break;
 
-                case 'G': // Grass tile
+                case 'G': // ground
                     if (tileCount < MAX_TILES) {
                         tiles[tileCount] = new Tile("assets/ground.png", x, y);
                         if (tiles[tileCount]->isValid()) {
@@ -124,6 +118,28 @@ public:
                         collectibleCount++;
                     }
                     break;
+
+                case 'W': // Wall / barrier
+                    if (tileCount < MAX_TILES) {
+                        tiles[tileCount] = new Tile("assets/wall.jpg", x, y);
+                        tileCount++;
+                    }
+                    break;
+
+                case 'D': // Door
+                    if (tileCount < MAX_TILES) {
+                        tiles[tileCount] = new Tile("assets/door.png", x, y);
+                        tileCount++;
+                    }
+                    break;
+
+                case 'K': // Key collectible
+                    if (collectibleCount < MAX_COLLECTIBLES) {
+                        collectibles[collectibleCount] = new Key(x, y);
+                        collectibleCount++;
+                    }
+                    break;
+
 
                 default:
                     // Skip empty spaces and unknown characters
