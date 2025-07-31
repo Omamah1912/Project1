@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck Dash - Sprite Reference Guide</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f0f8ff; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; }
+        .header { text-align: center; background: #2E4057; color: white; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
+        .section { margin: 30px 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background: #fafafa; }
+        .sprite-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .sprite-card { background: white; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #ccc; }
+        .sprite-visual { width: 60px; height: 60px; margin: 0 auto 10px; border: 2px solid #333; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+        .color-palette { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+        .color-item { display: flex; align-items: center; background: white; padding: 10px; border-radius: 5px; }
+        .color-swatch { width: 30px; height: 30px; border-radius: 4px; margin-right: 10px; border: 1px solid #333; }
+        .file-structure { background: #1e1e1e; color: #00ff00; padding: 15px; border-radius: 5px; font-family: monospace; font-size: 0.9em; }
+        .folder { color: #87CEEB; font-weight: bold; }
+        .file { color: #FFD700; }
+        h1 { font-size: 2.5em; margin: 0; }
+        h2 { color: #2E4057; border-bottom: 2px solid #4169E1; padding-bottom: 5px; }
+        .spec-list { list-style: none; padding: 0; }
+        .spec-list li { padding: 5px 0; border-bottom: 1px solid #eee; }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li:before { content: "✓ "; color: #28a745; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦆 DUCK DASH</h1>
+            <p>Sprite Reference Guide - Version 2.0</p>
+            <p>Complete Visual Design Documentation</p>
+        </div>
+
+        <div class="section">
+            <h2>�� Grid System & Sizing Standards</h2>
+            <ul class="spec-list">
+                <li><strong>Base Grid:</strong> 16×16 pixels (all sprites align to this)</li>
+                <li><strong>Player Character:</strong> 32×32 pixels (2×2 grid units)</li>
+                <li><strong>Environment Tiles:</strong> 32×32 pixels (standard tile size)</li>
+                <li><strong>Small Collectibles:</strong> 16×16 pixels (1×1 grid unit)</li>
+                <li><strong>Large Collectibles:</strong> 24×24 pixels (1.5×1.5 grid units)</li>
+                <li><strong>Small Enemies:</strong> 24×24 pixels (bees)</li>
+                <li><strong>Large Enemies:</strong> 48×48 pixels (bears)</li>
+                <li><strong>Huge Hazards:</strong> 64×96 pixels (tornado)</li>
+                <li><strong>UI Elements:</strong> 24×24 pixels (consistent UI sizing)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🎨 Official Color Palette</h2>
+            <div class="color-palette">
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #87CEEB;"></div>
+                    <div><strong>Sky Blue</strong><br>#87CEEB<br>Background, water</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #32CD32;"></div>
+                    <div><strong>Grass Green</strong><br>#32CD32<br>Ground tiles</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #696969;"></div>
+                    <div><strong>Stone Gray</strong><br>#696969<br>Platforms, rocks</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #8B4513;"></div>
+                    <div><strong>Earth Brown</strong><br>#8B4513<br>Ground, bears</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #FFD700;"></div>
+                    <div><strong>Golden Yellow</strong><br>#FFD700<br>Player, seeds, bees</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #FF4500;"></div>
+                    <div><strong>Danger Red</strong><br>#FF4500<br>Enemies, hazards</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #9370DB;"></div>
+                    <div><strong>Magic Purple</strong><br>#9370DB<br>Special effects</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #FFFFFF;"></div>
+                    <div><strong>Pure White</strong><br>#FFFFFF<br>UI text, highlights</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🦆 Player Sprites - Adventurer Duck (32×32 pixels)</h2>
+            <div class="sprite-grid">
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #FFD700, #FFA500);">🦆</div>
+                    <strong>Idle Frame 1</strong><br>Breathing In<br>0.5s duration
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #FFD700, #FFA500);">🦆</div>
+                    <strong>Idle Frame 2</strong><br>Breathing Out<br>0.5s duration
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #FFD700, #FFA500);">🦆</div>
+                    <strong>Walk Frame 1</strong><br>Left foot forward<br>0.1s duration
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #FFD700, #FFA500);">🦆</div>
+                    <strong>Walk Frame 2</strong><br>Both feet together<br>0.1s duration
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #FFD700, #FFA500);">🦆</div>
+                    <strong>Walk Frame 3</strong><br>Right foot forward<br>0.1s duration
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #FFD700, #FFA500);">🦆</div>
+                    <strong>Walk Frame 4</strong><br>Both feet together<br>0.1s duration
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #FFD700, #FFA500);">🦆</div>
+                    <strong>Jump Frame 1</strong><br>Takeoff pose<br>0.2s duration
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #FFD700, #FFA500);">🦆</div>
+                    <strong>Jump Frame 2</strong><br>Landing pose<br>0.2s duration
+                </div>
+            </div>
+            <p><strong>Features:</strong> Bright yellow body, orange beak, blue adventure hat with feather, animated wing flapping</p>
+        </div>
+
+        <div class="section">
+            <h2>💎 Collectible Sprites</h2>
+            <div class="sprite-grid">
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: radial-gradient(circle, #FFD700, #FFA500);">🌱</div>
+                    <strong>Magic Seeds</strong><br>16×16 pixels<br>10 points each<br>Golden glow + floating
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #9370DB, #FF69B4);">🪶</div>
+                    <strong>Rainbow Feathers</strong><br>24×24 pixels<br>50 points each<br>Rotating shimmer
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #87CEEB, #4169E1);">��</div>
+                    <strong>Energy Potions</strong><br>20×32 pixels<br>25 points + boost<br>Bubbling liquid
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>👹 Enemy Sprites & Hazards</h2>
+            <div class="sprite-grid">
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #8B4513, #A0522D);">🐻</div>
+                    <strong>Cartoon Bears</strong><br>48×48 pixels<br>1 damage<br>Patrol platforms
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #FFD700, #000000);">🐝</div>
+                    <strong>Pixel Bees</strong><br>24×24 pixels<br>1 damage<br>Sine wave flight
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #696969, #A9A9A9);">🌪️</div>
+                    <strong>Tornado Hazard</strong><br>64×96 pixels<br>Game Over<br>8-frame spin
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🌍 Environment Sprites</h2>
+            <div class="sprite-grid">
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #32CD32, #228B22);">🌱</div>
+                    <strong>Grass Tiles</strong><br>32×32 pixels<br>4 variants<br>Lush detail
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #696969, #2F4F4F);">🪨</div>
+                    <strong>Stone Platforms</strong><br>32×32 pixels<br>3 types<br>Weathered blocks
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #87CEEB, #FFFFFF);">☁️</div>
+                    <strong>Animated Clouds</strong><br>64×32 pixels<br>Slow drift<br>30s cycle
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #228B22, #32CD32);">🌳</div>
+                    <strong>Forest Trees</strong><br>48×64 pixels<br>Swaying leaves<br>Background depth
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎮 UI Sprites & Particle Effects</h2>
+            <div class="sprite-grid">
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #FF4500, #DC143C);">❤️</div>
+                    <strong>Life Hearts</strong><br>24×24 pixels<br>3 states<br>Pulsing when low
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #FF4500, #FFFFFF);">🚩</div>
+                    <strong>Checkpoint Flag</strong><br>32×64 pixels<br>4-frame wave<br>Victory fanfare
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: radial-gradient(circle, #FFD700, #FFFFFF);">✨</div>
+                    <strong>Collection Sparkles</strong><br>8×8 pixels<br>6-frame burst<br>0.5s duration
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #8B4513, #D2B48C);">💨</div>
+                    <strong>Dust Particles</strong><br>4×4 pixels<br>1s fade out<br>Movement trigger
+                </div>
+                <div class="sprite-card">
+                    <div class="sprite-visual" style="background: linear-gradient(45deg, #87CEEB, #FFFFFF);">💧</div>
+                    <strong>Water Splash</strong><br>16×16 pixels<br>4-frame splash<br>0.3s duration
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📁 Recommended File Structure</h2>
+            <div class="file-structure">
+<span class="folder">/assets/sprites/</span>
+├── <span class="folder">player/</span>
+│   ├── <span class="file">duck_idle_32x32.png</span>
+│   ├── <span class="file">duck_walk_32x32.png</span>
+│   └── <span class="file">duck_jump_32x32.png</span>
+├── <span class="folder">enemies/</span>
+│   ├── <span class="file">bear_idle_48x48.png</span>
+│   ├── <span class="file">bear_walk_48x48.png</span>
+│   ├── <span class="file">bee_fly_24x24.png</span>
+│   └── <span class="file">tornado_spin_64x96.png</span>
+├── <span class="folder">collectibles/</span>
+│   ├── <span class="file">seed_float_16x16.png</span>
+│   ├── <span class="file">feather_rotate_24x24.png</span>
+│   └── <span class="file">potion_bubble_20x32.png</span>
+├── <span class="folder">environment/</span>
+│   ├── <span class="file">grass_variants_32x32.png</span>
+│   ├── <span class="file">stone_blocks_32x32.png</span>
+│   ├── <span class="file">clouds_drift_64x32.png</span>
+│   └── <span class="file">trees_sway_48x64.png</span>
+├── <span class="folder">ui/</span>
+│   ├── <span class="file">hearts_24x24.png</span>
+│   ├── <span class="file">flag_wave_32x64.png</span>
+│   └── <span class="file">score_font_16px.png</span>
+└── <span class="folder">effects/</span>
+    ├── <span class="file">sparkles_8x8.png</span>
+    ├── <span class="file">dust_4x4.png</span>
+    └── <span class="file">splash_16x16.png</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>⚙️ Technical Implementation</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h3>Sprite Format Standards</h3>
+                    <ul class="spec-list">
+                        <li><strong>Format:</strong> PNG with alpha transparency</li>
+                        <li><strong>Layout:</strong> Horizontal sprite sheets</li>
+                        <li><strong>Scaling:</strong> 2x or 3x for high-DPI displays</li>
+                        <li><strong>Compression:</strong> Optimized for web delivery</li>
+                        <li><strong>Lighting:</strong> Consistent top-left direction</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Performance Optimization</h3>
+                    <ul class="spec-list">
+                        <li><strong>Atlasing:</strong> Combine sprites to reduce draw calls</li>
+                        <li><strong>Pooling:</strong> Reuse particle effect objects</li>
+                        <li><strong>Culling:</strong> Skip off-screen sprite rendering</li>
+                        <li><strong>Caching:</strong> Preload all textures at startup</li>
+                        <li><strong>Batching:</strong> Group similar sprites together</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>✅ Quality Assurance Checklist</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h3>Visual Quality Standards</h3>
+                    <ul class="checklist">
+                        <li>All sprites align to 16×16 pixel grid</li>
+                        <li>Consistent lighting direction maintained</li>
+                        <li>Proper alpha channel transparency</li>
+                        <li>No color bleeding on sprite edges</li>
+                        <li>Readable at different zoom levels</li>
+                        <li>Consistent art style throughout</li>
+                        <li>Smooth animation transitions</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Technical Standards</h3>
+                    <ul class="checklist">
+                        <li>Proper file naming convention used</li>
+                        <li>Optimized file sizes achieved</li>
+                        <li>Cross-platform compatibility tested</li>
+                        <li>Animation timing matches specifications</li>
+                        <li>Performance benchmarks met</li>
+                        <li>Accessibility guidelines followed</li>
+                        <li>Game engine integration verified</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Design Summary</h2>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #2E4057; background: #f0f8ff; padding: 20px; border-radius: 8px; border-left: 5px solid #4169E1;">
+                This comprehensive sprite design creates a <strong>cohesive, professional-looking game</strong> with consistent 16-bit inspired art style, 
+                smooth 60 FPS animations, clear visual hierarchy, accessible design with good contrast, scalable graphics for different screen sizes, 
+                and optimized performance with appropriate sprite sizes.
+            </p>
+            <p style="font-size: 1.1em; line-height: 1.8; color: #2E4057;">
+                The design balances <strong>retro pixel art charm with modern polish</strong>, creating an appealing visual experience that will 
+                engage players and give your Duck Dash game a commercial-quality appearance suitable for Steam, mobile app stores, or any gaming platform.
+            </p>
+            
+            <div style="background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                <h3 style="color: #856404; margin-top: 0;">🏆 Key Features of This Design</h3>
+                <ul class="checklist">
+                    <li>Complete 16-bit inspired pixel art style with modern polish</li>
+                    <li>8 player animation frames with smooth breathing, walking, and jumping</li>
+                    <li>Comprehensive enemy roster with unique behaviors and animations</li>
+                    <li>Engaging collectible system with visual feedback and point values</li>
+                    <li>Professional UI elements and particle effects for game feel</li>
+                    <li>Scalable architecture ready for future content expansion</li>
+                    <li>Optimized for modern game engines (Unity, Godot, GameMaker, etc.)</li>
+                    <li>Commercial-quality assets ready for Steam/mobile release</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
