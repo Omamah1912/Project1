@@ -47,4 +47,8 @@ public:
     virtual void render(sf::RenderWindow& window) {
         window.draw(sprite);
     }
+    sf::FloatRect getGlobalBounds() const {
+        return sprite.getGlobalBounds();
+    }
+
 };

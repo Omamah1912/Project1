@@ -37,4 +37,6 @@ public:
     bool isSolid() const {
         return texturePath == "assets/ground.png" || texturePath == "assets/grass.png";
     }
+
+
 };

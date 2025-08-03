@@ -148,18 +148,23 @@
   <ItemGroup>
     <ClInclude Include="Bear.h" />
     <ClInclude Include="Collectible.h" />
+    <ClInclude Include="Collision.h" />
     <ClInclude Include="Duck.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Feather.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="Juice.h" />
     <ClInclude Include="Key.h" />
+    <ClInclude Include="LifeManager.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="puddleee.h" />
     <ClInclude Include="rock.h" />
     <ClInclude Include="Seed.h" />
     <ClInclude Include="Tile.h" />
+    <ClInclude Include="TitleScreen.h" />
     <ClInclude Include="Tornado.h" />
     <ClInclude Include="WorldLoader.h" />
   </ItemGroup>

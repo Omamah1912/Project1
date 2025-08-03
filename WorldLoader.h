@@ -70,6 +70,8 @@ public:
                     }
                     break;
 
+           
+
                 case 'B': // Bear enemy
                     if (enemyCount < MAX_ENEMIES) {
                         enemies[enemyCount] = new Bear(x, y);
@@ -149,7 +151,7 @@ public:
             row++;
         }
 
-        file.close();
+        file.close();   
 
         std::cout << "World loaded successfully!" << std::endl;
         std::cout << "Tiles: " << tileCount << std::endl;
@@ -157,4 +159,12 @@ public:
         std::cout << "Collectibles: " << collectibleCount << std::endl;
         std::cout << "Enemies: " << enemyCount << std::endl;
     }
+
+
+
+
+
+
+
+
 };
