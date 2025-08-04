@@ -22,7 +22,7 @@ public:
         windowWidth = windowSize.x;
         windowHeight = windowSize.y;
 
-        // Create background - try to load image, fallback to yellow
+
         background.setSize(sf::Vector2f(static_cast<float>(windowWidth), static_cast<float>(windowHeight)));
         background.setPosition(0, 0);
 

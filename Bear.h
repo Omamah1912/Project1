@@ -37,7 +37,7 @@ public:
 
     void onCollide() override {
         if (!hasHitDuckThisChase && chaseCount <= maxChases) {
-            gLifeManager.reduceLife();  // <-- Direct call to the global manager
+            gLifeManager.reduceLife(); 
             hasHitDuckThisChase = true;
             state = STUNNED;
             stunTime = 2.0f;
@@ -65,13 +65,13 @@ private:
             if (dist < detectionRadius && chaseCount < maxChases) {
                 state = CHASING;
                 chaseCount++;
-                hasHitDuckThisChase = false; // Reset for new chase
+                hasHitDuckThisChase = false; 
             }
         }
 
         if (state == CHASING) {
-            // If duck runs far away, give up
-            if (dist > detectionRadius * 1.5f) { // Give up if 50% beyond detection range
+ 
+            if (dist > detectionRadius * 1.5f) { 
                 state = PATROLLING;
                 return;
             }

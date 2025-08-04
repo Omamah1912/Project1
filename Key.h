@@ -6,7 +6,7 @@ class Key : public Collectible {
 public:
     Key(float x, float y) {
         if (setTexture("assets/key.png")) {
-            scaleToSize(48.0f, 48.0f);// 40x40 pixels
+            scaleToSize(48.0f, 48.0f);
         }
         setPosition(x, y);
     }

@@ -1,16 +1,11 @@
-GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
-GWW   F    W GWW    S  W GWW   J   W GWW    F  W GWW   S   W GWW    F  W GWW   J   W GWW    S  W GWW   F   W GWW    S  W GWW   J   W GWW    F  W GG
-G  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W G
-G     R     W     P     W     R     W     P     W     R     W     P     W     R     W     P     W     R     W     P     W     R     W     P     W
-G  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W G
-G   W   F   W   W   J   W   W   S   W   W   F   W   W   J   W   W   S   W   W   F   W   W   J   W   W   S   W   W   F   W   W   J   W   W   S   W G
-G  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG G
-G P       W     R    W    S   W   F    W  J   W   S    W  F   W  J   W  S   W  F   W   J    W  S   W  F   W  J   W  S   W  F   W  J   W  S   W   G
-G  GGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  GGGGGGG  W  G
-G    F    W     J     W     S     W     F     W     J     W     S     W     F     W     J     W     S     W     F     W     J     W     S     W  G
-G  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG  GGG  GGGGG G
-G   W  K   W   W   F  W  S  W   J  W  F  W  S  W  J  W  F  W  S  W  J  W  F  W  S  W  J  W  F  W  S  W  J  W  F  W  S  W  J  W  F  W  S  W  J   W G
-G  GGGGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GGGGG  GG
-G   W   S   W   R   W  T   W  F  W  J  W  S  W  R  W  T  W  F  W  J  W  S  W  R  W  T  W  F  W  J  W  S  W  R  W  T  W  F  W  J  W  S  W  R  W  T G
-G...........................................................................................................................................B.B.DG
-GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+GB       GGGGG    GGGGGG    GGGGGGGG      GGGGGG    GGGGGGG    GGGGGGGG    GGGGGGG    GGGGGG      GGGGGGGG    GGGGG    GGGGGGG    GGGGGGGG    GGGGGGG    GGGGGG    GGGGGGG    GGGGGGGG    GGGGG    GGGGGG    GGGGGGG    GGGGGGGG
+G K   GGG  K   GGG K   GGG  J   GGG      GG F   GGGG  S   GGG   B  GGG      GGG     GGG     GGG  J   GGGG  B    GGG   GGG K   GGG     GGG      GGG     GGG     GGG  J   GGG     GGG      GGG   GGG K   GGG  J   GGG     GGG
+G     G     G     G     G  G     G     GG   G    S G  G     G     G     GG     G   T  G     G  G     G     GG     G   G     G     G     G     GG     G     G     G  G     G     G     GG     G     G  G     G     G     G
+GGG G   G GGG   F   G GG   GGG   GGG   S GGG GG   GGG    G   GGG G   GGG   G    G   GGG GG   GGG   GGG    GGG   GGG G   GGG  G   GGG   G   GGG GG   GGG   GGG G   GGG G   GGG   G   GGG   GGG G   GGG   GGG G
+G     G G     G   F  G G  G     G       G     G     G  G     G     G G     G     G     G G     G  G     G     G       G     G G     G     G G     G     G     G  G     G     G G     G     G G  G     G     G G     G     G
+G GGG   GGG G   GGG G      GGGGGGG     GGG GG   GGG   G   GGG G   GGG GG   GGG GGGGGGG G     GGGGGGG G   GGG G   GGG GG      G     GGG G GG   GGG   GGG G   GGG  G   GGG G
+G  F  D G     F    G     S G     G  F     F     G       G     G           G     G     G         G       G     G         G     K      G       G     G J    G       G     G      G     G         G       G     G G     G
+GGGGGGG   GGGGGGG GGGG    GGGGGGG   GGG GGGGGGG   GGGGGGG   GGGGGGG GGGGGGG   GGGGGGG   GGGGGGG GGGGGGG   GGGGGGG   GGGGGGG GGGGGGG   GGGGGGG   GGGGGGG   GGGGGGG GGGGGGG GGGG    GGGGGGG   GGGGGGG GGGGGGG   GGG G
+G    J     G    J     T    G      G    F       G     G         G      F     G     J      G         G    J       G         K    G         G       G         G     F      G         G       G    B     K    G         G       G   T G
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG

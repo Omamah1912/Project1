@@ -6,7 +6,7 @@ class Feather : public Collectible {
 public:
     Feather(float x, float y) {
         if (setTexture("assets/feather.png")) {
-            scaleToSize(48.0f, 48.0f); // 32x32 pixels
+            scaleToSize(48.0f, 48.0f); 
         }
         setPosition(x, y);
     }
@@ -14,6 +14,6 @@ public:
     void onCollect(Duck& duck) override {
         std::cout << "Collected Feather! +10 points" << std::endl;
         duck.addScore(10);
-        // Add scoring logic here later
+
     }
 };

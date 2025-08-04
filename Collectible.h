@@ -14,7 +14,7 @@ public:
     virtual void onCollect(Duck& duck) = 0;
 
     virtual void update(float dt) override {
-        // Optional animations or bobbing
+
     }
 
  

@@ -7,38 +7,41 @@
 class Duck : public Entity {
 private:
     float speed = 250.0f;
-    float jumpSpeed = 400.0f;
+    float jumpSpeed = 1000.0f;
     float velocityX = 0.0f;
     float velocityY = 0.0f;
-    float gravity = 1200.0f;
+    float gravity = 700.0f;
     bool onGround = false;
     bool canJump = true;
     int score = 0;
     int lives = 3;
 
-    // Juice boost state
     bool boosted = false;
     float timer = 0.0f;
     const float boost_dur = 10.0f;
 
     bool windShieldActive;
     bool inPuddle = false;
+    sf::Vector2f spawnPosition;
+
 
 public:
-    Duck() {
+    Duck(sf::Vector2f spawn = sf::Vector2f(32.0f, 96.0f)) : spawnPosition(spawn) {
         if (setTexture("assets/duck_brown.png")) {
             scaleToSize(48.0f, 48.0f);
         }
-        setPosition(64.0f, 64.0f);
+        setPosition(spawnPosition.x, spawnPosition.y);
+    }  
+
+    void setSpawnPosition(const sf::Vector2f& spawn) {
+        spawnPosition = spawn;
     }
 
     void update(float dt) override {
         handleInput(dt);
         applyGravity(dt);
-        updateBoostTimer(dt);   // <- handles speed boost timing
+        updateBoostTimer(dt);   
         updatePosition(dt);
-
-        // Reset ground status each frame
         onGround = false;
     }
 
@@ -66,12 +69,11 @@ public:
     void setVelocityX(float vx) { velocityX = vx; }
     void setVelocityY(float vy) { velocityY = vy; }
 
-    // Triggered when juice is collected
+
     void applyJuiceBoost() {
         boosted = true;
         timer = boost_dur;
 
-        // Multiply current movement values
         speed *= 1.5f;
         jumpSpeed *= 1.2f;
         std::cout << "Speed Boosted!" << std::endl;
@@ -96,12 +98,11 @@ public:
         return sprite.getPosition();
     }
 
-    // 2?? Puddle status
+
     bool isInPuddle() const {
         return inPuddle;
     }
 
-    // 3?? Setter for puddle status
     void setInPuddle(bool state) {
         inPuddle = state;
     }
@@ -113,11 +114,10 @@ public:
         windShieldActive = false;
         timer = 0.f;
         velocityX = velocityY = 0.f;
-        // reset speeds in case boost had changed them
+
         speed = 250.f;
-        jumpSpeed = 400.f;
-        // back to your start position:
-        setPosition(64.f, 64.f);
+        jumpSpeed = 700.f;
+        setPosition(spawnPosition.x, spawnPosition.y);
     }
 
 private:
@@ -126,9 +126,12 @@ private:
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
             velocityX = -speed;
+            sprite.setScale(-1.f, 1.f);
+
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
             velocityX = speed;
+            sprite.setScale(1.f, 1.f);
         }
 
         // Jump
@@ -150,7 +153,6 @@ private:
         position.x += velocityX * dt;
         position.y += velocityY * dt;
 
-        // Screen boundaries
         if (position.x < 0) position.x = 0;
         if (position.y < 0) {
             position.y = 0;
@@ -160,19 +162,19 @@ private:
         sprite.setPosition(position);
     }
 
-    // NEW: Boost timer handler
+
     void updateBoostTimer(float dt) {
         if (boosted) {
             timer -= dt;
             if (timer <= 0.0f) {
                 boosted = false;
 
-                // Restore to normal values
-                speed = 150.0f;
-                jumpSpeed = 200.0f;
+                speed = 250.0f;
+                jumpSpeed = 1000.0f;
                 std::cout << "Boost ended!" << std::endl;
             }
         }
+       
     }
     
 

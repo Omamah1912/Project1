@@ -16,7 +16,7 @@ public:
     }
 
     void update(float dt) override {
-        // Tiles are static, no update needed
+
     }
 
     void render(sf::RenderWindow& window) override {

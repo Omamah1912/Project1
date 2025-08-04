@@ -7,10 +7,10 @@
 class Obstacle : public Entity {
 public:
     Obstacle() = default;
-    virtual ~Obstacle() override = default;  // ensures polymorphic behavior
+    virtual ~Obstacle() override = default;
 
     void update(float dt) override {
-        // For moving obstacles, override later
+
     }
 
     void render(sf::RenderWindow& window) override {

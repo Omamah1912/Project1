@@ -11,7 +11,7 @@ public:
 
             std::string tex = tiles[i]->getTextureName();
 
-            // Check only solid blocking tiles
+
             if (tex == "assets/wall.jpg" || tex == "assets/ground.png") {
                 if (objBounds.intersects(tiles[i]->getGlobalBounds())) {
                     return true;

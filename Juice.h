@@ -8,7 +8,7 @@ private:
 public:
     Juice(float x, float y) {
         if (setTexture("assets/juice.png")) {
-            scaleToSize(48.0f, 48.0f);// 40x40 pixels
+            scaleToSize(48.0f, 48.0f);
         }
         setPosition(x, y);
     }

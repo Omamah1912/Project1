@@ -28,7 +28,7 @@ public:
         Tile* tiles[], int& tileCount,
         Obstacle* obstacles[], int& obstacleCount,
         Collectible* collectibles[], int& collectibleCount,
-        Enemy* enemies[], int& enemyCount)
+        Enemy* enemies[], int& enemyCount, sf::Vector2f& duckpos)
     {
         std::cout << "Loading world from: " << filename << std::endl;
 
@@ -38,12 +38,11 @@ public:
             return;
         }
 
-        // Reset counters
+
         tileCount = 0;
         obstacleCount = 0;
         collectibleCount = 0;
         enemyCount = 0;
-
         std::string line;
         int row = 0;
 
@@ -128,13 +127,6 @@ public:
                     }
                     break;
 
-                case 'D': // Door
-                    if (tileCount < MAX_TILES) {
-                        tiles[tileCount] = new Tile("assets/door.png", x, y);
-                        tileCount++;
-                    }
-                    break;
-
                 case 'K': // Key collectible
                     if (collectibleCount < MAX_COLLECTIBLES) {
                         collectibles[collectibleCount] = new Key(x, y);
@@ -142,7 +134,10 @@ public:
                     }
                     break;
 
-
+                case 'D': // Duck spawn position (changed from Door)
+                    duckpos = sf::Vector2f(x, y);
+                    std::cout << "Duck spawn position found at: (" << x << ", " << y << ")" << std::endl;
+                    break;
                 default:
                     // Skip empty spaces and unknown characters
                     break;

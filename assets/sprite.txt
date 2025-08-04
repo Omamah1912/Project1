@@ -1,0 +1,50 @@
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+GG                         GG            G               G   G           GG
+GG                         GG            G               G   G           GG
+GG                         GG            G               G   G           GG
+GG                         GG G        GGG               G   G           GG
+GG             G           GG G        G           GGGGGGG   G           GG
+GG             G       GG  GGGG        G    GG               G           GG
+GG             G       GG              G    GG               G           GGGGG
+GG             G        G              GGGGGGG               G           GGGGG
+GG             G        G        F      GGGGGGG        F       GGGGGG      GGG
+GG      GGGGGGGGG       G                    G                           GGGGG
+GG                    K  GGGGGGGGGGGG         G                           GGGG
+GG                                           G    GGGGGGGGGG      J       GGGG
+GG           B                F                G        GG                 GGG
+GG    J                                    J   G    K     G            S     G
+GG                     S                      G     K    G                 GGG
+GG                            K               G         G      GGGGG      GGGG
+GG      GGGGGGGGG     G                      G   GG    G                 GGGGG
+GG             GG     G                      G   GG    G                 GGGGG
+GG     K        GG     G     GGGGGGGGGGGG         GG    G                 GGGG
+GG             GGGGGGGG     G         GG         GGGGGGGGG       J        GGGG
+GG                          G         GG                GG               GGGGG
+GG                          G         G                 GG               GGGGG
+GG             S        K     G      F   G                 GG               GG
+GG                          G         G       J          GG               GGGG
+GG       F                   G         G                                  GGGG
+GG                G         G         G                      GGGGGG      GGGGG
+GG                G       GGGG        G       K                           GGGG
+GG      GGGGGGG   G       GGGG   GGGGGG                 B                 GGGG
+GG           GG   G              G                                 K      GGGG
+GG           GGGGGG              G                S                       GGGG
+GG                G              G                           G           GGGGG
+GG                G              G         J       GGGGGGGGGGGG           GGGG
+GG                GGGG           G                GG         G       J    GGGG
+GG        J                J       G                GG         G           GGG
+GG                               G    GGGG        GG         G           GGGGG
+GG                 K              G      GG        GG         G           GGGG
+GG      F                         G      GG        GG         G           GGGG
+GG                  P             G      GG            GGGGGGGGGGGG       GGGG
+GG         GG                    G      GG                   G           GGGGG
+GG         GG     GGGGGGGGGG     G      GG                   G           GGGGG
+GG         GG     G        G     G      GG       GGGGG       G           GGGGG
+GG         GG     G     GGGGGGGGGG      GG     K  G           G           GGGG
+GG      GGGGG     G                     GG       G           G           GGGGG
+GG      GGGGG     G                     GG       G         F  G        P   GGG
+GG                          F                                             GGGG
+GG D       S                                K                               GG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG

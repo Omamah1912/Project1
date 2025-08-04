@@ -57,6 +57,8 @@ private:
 
     // Flag to track if game world is initialized
     bool gameWorldInitialized;
+    sf::Vector2f duckpos;
+
 
 public:
     Game() : window(sf::VideoMode(1280, 720), "Duck Dash"),
@@ -85,30 +87,30 @@ public:
     }
 
 private:
-    // Only initialize UI elements (font, HUD, ability icon)
+
     void initializeUI() {
         initFonts();
         initHUD();
         initAbilityIcon();
-        // Initialize arrays to nullptr but don't load world yet
         initArrays();
-        // Set basic window properties
         window.setFramerateLimit(60);
     }
 
-    // Initialize the actual game world - only called when starting gameplay
+
     void initializeGameWorld() {
         std::cout << "Initializing game world..." << std::endl;
 
-        cleanup(); // Clean up any existing game world
+        cleanup();
 
         loadWorld();
+        player.setSpawnPosition(duckpos);
+        player.setPosition(duckpos.x, duckpos.y);
         calculateWorldBounds();
-        positionDuckOnGround();
         initCamera();
 
         gameWorldInitialized = true;
         std::cout << "Game world initialized successfully!" << std::endl;
+        std::cout << "Duck positioned at: (" << duckpos.x << ", " << duckpos.y << ")" << std::endl;
     }
 
     void initFonts() {
@@ -132,9 +134,7 @@ private:
         boostText.setCharacterSize(24);
         boostText.setFillColor(sf::Color::Black);
         boostText.setString("Speed Boosted!");
-        boostText.setPosition(50, 50);
 
-        // Initialize score view text
         viewScoreText.setFont(font);
         viewScoreText.setCharacterSize(48);
         viewScoreText.setFillColor(sf::Color::White);
@@ -163,7 +163,7 @@ private:
     }
 
     void saveScoreToFile(int score) {
-        std::ofstream file("score.txt", std::ios::app); // append mode
+        std::ofstream file("score.txt", std::ios::app); 
         if (file.is_open()) {
             file << score << "\n";
             file.close();
@@ -177,7 +177,7 @@ private:
         std::ifstream file("score.txt");
         lastScore = 0;
         if (file.is_open()) {
-            // Read the last line of the file to get the most recent score
+
             std::string line;
             while (std::getline(file, line)) {
                 if (!line.empty()) {
@@ -187,10 +187,9 @@ private:
             file.close();
         }
 
-        // Update the display text
+
         viewScoreText.setString("Last Score: " + std::to_string(lastScore));
 
-        // Center the text on screen
         sf::FloatRect textBounds = viewScoreText.getLocalBounds();
         viewScoreText.setPosition(640 - textBounds.width / 2, 300);
 
@@ -203,7 +202,7 @@ private:
             tiles, tileCount,
             obstacles, obstacleCount,
             collectibles, collectibleCount,
-            enemies, enemyCount
+            enemies, enemyCount, duckpos
         );
     }
 
@@ -214,7 +213,7 @@ private:
     }
 
     void cleanup() {
-        if (gameWorldInitialized) {  // Only cleanup if initialized
+        if (gameWorldInitialized) {  
             std::cout << "Cleaning up game world..." << std::endl;
             for (int i = 0; i < tileCount; i++) delete tiles[i];
             for (int i = 0; i < obstacleCount; i++) delete obstacles[i];
@@ -306,7 +305,6 @@ private:
                 updateCamera();
                 updateHUD(dt);
 
-                // Check game over
                 if (player.getLives() <= 0) {
                     saveScoreToFile(player.getScore());
                     gameState = GameState::MENU;
